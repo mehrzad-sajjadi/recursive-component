@@ -1,7 +1,11 @@
 import { FolderIcon } from '@heroicons/react/24/solid'
 
+type Folder = {
+    name:string,
+    folders?:Folder[]
+}
 function App() {
-    const folders = [
+    const folders:Folder[] = [
         {
             name: "Movie", folders: [
                 {
@@ -38,7 +42,7 @@ function App() {
     )
 }
 
-function Folder({folders}) {
+function Folder({folders}:Folder) {
     return (
         <ul className='pl-6'>
             {
